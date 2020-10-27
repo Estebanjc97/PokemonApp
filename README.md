@@ -1,5 +1,11 @@
 # PokemonApp
 
+Develop by: Esteban Jiménez Calderón (https://cv-esteban.web.app/home)
+
+Date: 27/10/2020
+
+This project is a simple frontend for show pokemon data from https://pokeapi.co/ , feel free to download, comment or change as you need.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
 ## Development server
