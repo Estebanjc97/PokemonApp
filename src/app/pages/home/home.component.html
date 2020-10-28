@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p>
+        Pokelistado
+      </p>
+
+      <button (click)="loadPokemons(true)" > Cargar más </button>
+
+      <ul>
+        <li *ngFor="let pokemon of pokemons; let i = index" > Nombre: {{ pokemon.name }} -- Code: {{ i }} </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

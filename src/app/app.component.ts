@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PokemonApp';
+  description = 'My pokedex developed by Esteban Jiménez Calderón'
 }

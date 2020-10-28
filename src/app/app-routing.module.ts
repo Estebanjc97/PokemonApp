@@ -4,11 +4,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: NavbarComponent, children: [
-    { path: 'Home', component: HomeComponent }
-  ] },
-  { path: '', redirectTo: 'Home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'Home', pathMatch: 'full' }
+  { path: 'home', component: NavbarComponent, children: [
+    { path: '', component: HomeComponent }
+  ]},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
