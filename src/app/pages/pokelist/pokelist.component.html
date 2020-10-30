@@ -1,0 +1,35 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col-12">
+      <p>
+        Pokelistado
+      </p>
+    </div>
+  </div>
+
+
+
+  <div class="row" style="margin: 15px 0px;">
+    <div class="col-12" style="text-align: center;">
+      <input [(ngModel)]="query" (ngModelChange)="queryChange()" style="width: 80%;" type="text" placeholder="Search by name of pokemons">
+    </div>
+  </div>
+
+  <div class="row"
+        infinite-scroll
+        [infiniteScrollDistance]="scrollDistance"
+        [infiniteScrollThrottle]="scrollThrottle"
+        (scrolled)="onModalScrollDown($event)">
+        <div class="col-lg-3 col-md-4 col-dm-12" *ngFor="let pokemon of query === '' ? pokemons : queryResult; let i = index">
+          <app-poke-card style="cursor: pointer;" (click)="goDetails(pokemon.name)" [pokemon]="pokemon" [index]="pokemon.index" ></app-poke-card>
+        </div>
+  </div>
+
+  <div class="row" *ngIf="loading">
+    <div class="col-12">
+      <div style="margin: auto; width: fit-content;">
+        <app-loader [loopMode]="true"></app-loader>
+      </div>
+    </div>
+  </div>
+</div>

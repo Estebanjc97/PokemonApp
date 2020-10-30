@@ -1,0 +1,65 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row" *ngIf="!pokemon || abilities.length < 1">
+    <div class="col-12">
+      <div style="margin: auto; width: fit-content;">
+        <app-loader [loopMode]="true"></app-loader>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="pokemon || abilities.length > 1">
+
+    <div class="col-12" style="text-align: right;">
+      <button (click)="returnToList()" >return</button>
+    </div>
+
+    <div class="col-lg-5 col-sm-12" style="text-align: center;">
+      <div class="vertical-center" style="height: 100%; text-align: center;">
+        <h2>
+          {{ pokemon.name }}
+        </h2>
+      </div>
+    </div>
+    <div class="col-lg-7 col-sm-12">
+      <img style="width: 200px;" [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.id  + '.png'" alt="">
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <h4>
+        About:
+      </h4>
+      <ul>
+        <li>Name: {{ pokemon.name }}</li>
+        <li>Height: {{ pokemon.height }} Mts</li>
+        <li>Weight: {{ pokemon.weight }} Kgs</li>
+        <li>Base experience: {{ pokemon.base_experience }} XP</li>
+        <li>Tipes: <span *ngFor="let type of pokemon.types" > {{ type.type.name }} </span> </li>
+      </ul>
+    </div>
+
+    <div class="col-lg-4 col-sm-12">
+      <h4>
+        Basic stats
+      </h4>
+
+      <ul>
+        <li *ngFor="let stat of pokemon.stats"> {{ stat.stat.name }}: {{ stat.base_stat }} </li>
+      </ul>
+    </div>
+    <div class="col-lg-12 col-sm-12">
+      <h4>
+        Abilities
+      </h4>
+
+      <div class="row" *ngFor="let ability of abilities">
+        <div class="col-12">
+          <h5>
+            {{ ability.name }}
+          </h5>
+
+          <p> <span style="font-weight: bold;" > Effect: </span>  <span *ngFor="let effect of ability.effect_entries"> {{ effect.language.name === 'en' ? effect.effect : '' }} </span> </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

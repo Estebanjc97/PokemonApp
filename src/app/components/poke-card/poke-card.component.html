@@ -1,0 +1,15 @@
+<div style="width: 100%;">
+  <div class="card card--normal">
+    <div class="card__image-container">
+      <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + index  + '.png'" alt="Sylveon" class="card__image">
+    </div>
+
+    <figcaption class="card__caption">
+      <h1 class="card__name"> {{ pokemon.name }} </h1>
+
+      <h3 class="card__type">
+        {{index}}
+      </h3>
+    </figcaption>
+  </div>
+</div>
