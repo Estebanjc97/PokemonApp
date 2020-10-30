@@ -1,18 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
+<div class="home-content vertical-center">
+  <div class="poke-content" (click)="goToPokeList()">
+    <app-loader [loopMode]="false"></app-loader>
+    <div>
       <p>
-        Pokelistado
+        Go to Pokedex
       </p>
-
-      <button (click)="loadPokemons(true)" > Cargar más </button>
-
-      <div class="row">
-        <div class="col-lg-3 col-md-4 col-dm-12" *ngFor="let pokemon of pokemons; let i = index">
-          <app-poke-card style="cursor: pointer;" (click)="goDetails(i + 1)" [pokemon]="pokemon" [index]="i + 1" ></app-poke-card>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>

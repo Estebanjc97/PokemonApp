@@ -8,15 +8,13 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  isFullScreen: Boolean;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  open(){
-    this.isFullScreen = true;
+  goHome(){
     this.router.navigateByUrl("/home");
   }
 

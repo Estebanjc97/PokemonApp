@@ -9,6 +9,9 @@ import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PokeCardComponent } from './components/poke-card/poke-card.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { PokelistComponent } from './pages/pokelist/pokelist.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { LoaderComponent } from './components/loader/loader.component';
     PokemonDetailsComponent,
     NavbarComponent,
     PokeCardComponent,
-    LoaderComponent
+    LoaderComponent,
+    PokelistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

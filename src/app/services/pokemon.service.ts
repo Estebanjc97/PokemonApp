@@ -15,4 +15,12 @@ export class PokemonService extends BaseService {
     return this.get(`/pokemon?limit=${limit.toString()}&offset=${offset.toString()}`)
   }
 
+  public getPokemon(name){
+    return this.get(`/pokemon/${name}`)
+  }
+
+  public getPokemonAbilities(id){
+    return this.get(`/ability/${id}`)
+  }
+
 }

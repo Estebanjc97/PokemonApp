@@ -1,0 +1,17 @@
+.home-content{
+  height: 100vh;
+  background-color: rgb(194, 194, 194);
+}
+
+.poke-content{
+  margin: auto;
+  cursor: pointer;
+}
+
+.poke-content div{
+  text-align: center;
+}
+
+.poke-content :hover{
+  color: red;
+}
