@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonDetailsComponent implements OnInit {
 
-  constructor() { }
+  uId : string = null;
+
+  constructor( private activedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.uId = this.activedRoute.snapshot.params.id;
   }
 
 }

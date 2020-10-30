@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { PokemonService } from './../../services/pokemon.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   pokemons: { name: string, url: string }[] = [];
 
-  constructor(private pokeService: PokemonService) { }
+  constructor(private pokeService: PokemonService, private router:Router) { }
 
   ngOnInit(): void {
     this.loadPokemons(false);
@@ -35,6 +36,10 @@ export class HomeComponent implements OnInit {
     }, error => {
       console.log(error);
     })
+  }
+
+  goDetails(index){
+    this.router.navigate(['/pokemon', index])
   }
 
 }

@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details.component';
 
 const routes: Routes = [
-  { path: 'home', component: NavbarComponent, children: [
-    { path: '', component: HomeComponent }
+  { path: '', component: NavbarComponent, children: [
+    { path: 'home', component: HomeComponent },
+    { path: 'pokemon/:id', component: PokemonDetailsComponent }
   ]},
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

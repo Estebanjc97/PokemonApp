@@ -1,0 +1,14 @@
+.navbar{
+  width: 100%;
+  overflow: hidden;
+  transition: all ease 0.5s
+}
+.logo{
+  width: 100%;
+  text-align: center;
+}
+
+.logo img{
+  margin: auto;
+  width: 150px;
+}
